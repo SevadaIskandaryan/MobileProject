@@ -8,7 +8,7 @@
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
 /.idea/compiler.xml
-/..idea/kotlinc.xml
+/.idea/kotlinc.xml
 .DS_Store
 /build
 /captures

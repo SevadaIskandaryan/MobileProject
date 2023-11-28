@@ -8,10 +8,18 @@
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
 /.idea/compiler.xml
+<<<<<<< HEAD
+/.idea/kotlinc.xml
+=======
 /..idea/kotlinc.xml
+>>>>>>> origin/main
 .DS_Store
 /build
 /captures
 .externalNativeBuild
 .cxx
 local.properties
+/.idea/
+/gradle
+.settings.gradle.kts
+/app/build.gradle.kts

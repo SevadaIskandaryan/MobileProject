@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -35,7 +36,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    GreetingPreview()
                 }
             }
         }
@@ -53,47 +54,73 @@ var lst = listOf(
 @Composable
 fun firstScreen(){
     CoffeeList(coffees = lst)
-
 }
 
 @Composable
 fun CoffeeList(coffees: List<Coffee>) {
-    LazyColumn {
-        items(coffees) { coffee ->
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp)
-            ) {
-                Card(
+    Column (
+        modifier = Modifier
+        .fillMaxSize()
+        .padding(16.dp))
+    {
+        LazyColumn {
+            items(coffees) { coffee ->
+                Column(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(8.dp)
+                        .padding(16.dp)
                 ) {
-                    Column(
+                    Card(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(30.dp)
+                            .padding(8.dp)
                     ) {
-                        Row() {
-                            Text(
-                                text = coffee.name,
-                                style = MaterialTheme.typography.bodyLarge,
-                                color = MaterialTheme.colorScheme.onBackground,
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(30.dp)
+                        ) {
+                            Row() {
+                                Text(
+                                    text = coffee.name,
+                                    style = MaterialTheme.typography.bodyLarge,
+                                    color = MaterialTheme.colorScheme.onBackground,
 
-                            )
-                            Spacer(Modifier.weight(1f))
-                            Text(
-                                text = coffee.price.toString()+"AMD",
-                                style = MaterialTheme.typography.bodyLarge,
-                                color = MaterialTheme.colorScheme.onBackground,
-                            )
+                                )
+                                Spacer(Modifier.weight(1f))
+                                Text(
+                                    text = coffee.price.toString()+"AMD",
+                                    style = MaterialTheme.typography.bodyLarge,
+                                    color = MaterialTheme.colorScheme.onBackground,
+                                )
+                            }
                         }
                     }
+                    Spacer(modifier = Modifier.height(8.dp))
                 }
-                Spacer(modifier = Modifier.height(8.dp))
             }
         }
+        Text(
+            text = "Total: 2000AMD",
+            style = MaterialTheme.typography.bodyLarge,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+                .background(MaterialTheme.colorScheme.secondary)
+                .padding(8.dp)
+        )
+    }
+}
+
+
+@Composable
+fun TotalAmount(total: Int) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+    ) {
+
     }
 }
 

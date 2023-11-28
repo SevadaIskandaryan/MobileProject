@@ -11,7 +11,11 @@
 <<<<<<< HEAD
 /.idea/kotlinc.xml
 =======
+<<<<<<< HEAD
+/.idea/kotlinc.xml
+=======
 /..idea/kotlinc.xml
+>>>>>>> origin/main
 >>>>>>> origin/main
 .DS_Store
 /build

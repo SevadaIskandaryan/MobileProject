@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Americano",
+    "price": 800,
+    "description": "to be added",
+    "photoPath": "subject to change"
+  },
+  {
+    "id": 2,
+    "name": "Cappuccino",
+    "price": 1000,
+    "description": "to be added",
+    "photoPath": "subject to change"
+  },
+  {
+    "id": 3,
+    "name": "Latte",
+    "price": 1100,
+    "description": "to be added",
+    "photoPath": "subject to change"
+  },
+  {
+    "id": 4,
+    "name": "Black Coffee",
+    "price": 700,
+    "description": "to be added",
+    "photoPath": "subject to change"
+  },
+  {
+    "id": 5,
+    "name": "Frappuccino",
+    "price": 1200,
+    "description": "to be added",
+    "photoPath": "subject to change"
+  },
+  {
+    "id": 6,
+    "name": "Nutella Coffee",
+    "price": 1000,
+    "description": "to be added",
+    "photoPath": "subject to change"
+  }
+]

@@ -121,7 +121,9 @@ fun CoffeeScreenScrollContent(innerPadding: PaddingValues, navController: NavCon
         ){
             Button(onClick = {
                 setCoffeeSizeByID(currentCoffee.id, selectedSize)
-                setCoffeeQuantityByID(currentCoffee.id, selectedQuantity)},
+                setCoffeeQuantityByID(currentCoffee.id, selectedQuantity)
+                navController.navigate(route = "CoffeeList")
+                             },
             ) {
                 Text(text = "Add To Cart")
             }

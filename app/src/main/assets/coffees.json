@@ -29,15 +29,22 @@
   },
   {
     "id": 5,
-    "name": "Frappuccino",
+    "name": "Espresso",
     "price": 1200,
     "description": "to be added",
     "photoPath": "subject to change"
   },
   {
     "id": 6,
-    "name": "Nutella Coffee",
+    "name": "Ristretto",
     "price": 1000,
+    "description": "to be added",
+    "photoPath": "subject to change"
+  },
+  {
+    "id": 7,
+    "name": "Iced coffee",
+    "price": 1100,
     "description": "to be added",
     "photoPath": "subject to change"
   }

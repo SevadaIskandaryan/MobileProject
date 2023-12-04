@@ -87,7 +87,7 @@ fun CoffeeListTopMenu(navController: NavController) {
 
 @Composable
 fun CoffeeListScrollContent(innerPadding: PaddingValues, navController: NavController) {
-    val coffeeList: List<Coffee> = getCoffeeList()
+    //val coffeeList: List<Coffee> = getCoffeeList()
     Column (
         modifier = Modifier
             .fillMaxSize()
@@ -107,7 +107,7 @@ fun CoffeeListScrollContent(innerPadding: PaddingValues, navController: NavContr
                             .padding(8.dp)
                             .clickable {
                                 navController.navigate(route = "CoffeeScreen")
-                                CurrentCoffee = coffee
+                                CurrentCoffeeID = coffee.id
                             }
                     ) {
                         Column(

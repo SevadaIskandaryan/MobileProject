@@ -33,7 +33,8 @@ class MainActivity : ComponentActivity() {
     }
 }
 var TotalPrice = 0
-var CurrentCoffee = Coffee()
+var CurrentCoffeeID = 0
+var coffeeList = mutableListOf<Coffee>()
 
 @Composable
 fun getCoffeeList() : List<Coffee>{
@@ -42,13 +43,27 @@ fun getCoffeeList() : List<Coffee>{
         it.readText()
     }
     val gson = Gson()
-    val coffeeList: List<Coffee> = gson.fromJson(json_string, Array<Coffee>::class.java).toList()
+    coffeeList = gson.fromJson(json_string, Array<Coffee>::class.java).toMutableList()
     return coffeeList
+}
+
+fun getCoffeeByID(ID: Int): Coffee {
+    val coffee: Coffee = coffeeList.find { it.id == ID }!!
+    return coffee
+}
+
+fun setCoffeeSizeByID(ID: Int, size: String) {
+    coffeeList?.find { it.id == ID }?.size = size
+}
+
+fun setCoffeeQuantityByID(ID: Int, quantity: Int) {
+    coffeeList?.find { it.id == ID }?.quantity = quantity
 }
 
 @Composable
 fun CustomNavigationView() {
     val navController = rememberNavController()
+    getCoffeeList()
     NavHost(navController = navController, startDestination = "CoffeeList") {
         composable(
             route = "CoffeeList",

@@ -5,5 +5,7 @@ data class Coffee (
     val name: String = "",
     val price: Int = 0,
     val description: String = "",
-    val photoPath: String = ""
+    val photoPath: String = "",
+    var quantity: Int = 0,
+    var size: String = ""
 )

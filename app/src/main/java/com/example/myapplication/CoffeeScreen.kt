@@ -99,7 +99,7 @@ fun CoffeScreenTopMenu(navController: NavController) {
 @Composable
 fun CoffeeScreenScrollContent(innerPadding: PaddingValues, navController: NavController) {
     val currentCoffee = getCoffeeByID(CurrentCoffeeID)
-    currentPrice = addToPrice(currentCoffee.price, selectedSize)
+    if (currentPrice == 0) { currentPrice = addToPrice(currentCoffee.price, selectedSize)}
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -138,6 +138,7 @@ fun CoffeeScreenScrollContent(innerPadding: PaddingValues, navController: NavCon
                 setCoffeeQuantityByID(currentCoffee.id, selectedQuantity)
                 navController.navigate(route = "CoffeeList")
                 TotalPrice += addToPrice(currentCoffee.price, selectedSize)
+                currentPrice = 0
             },
             ) {
                 Text(text = "Add To Cart")

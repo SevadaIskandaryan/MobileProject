@@ -3,49 +3,49 @@
     "id": 1,
     "name": "Americano",
     "price": 800,
-    "description": "to be added",
-    "photoPath": "subject to change"
+    "description": "made by pouring hot water over one or two espresso shots, resulting in a drink of similar volume and strength to regular coffee.",
+    "photoID": 2130968597
   },
   {
     "id": 2,
     "name": "Cappuccino",
     "price": 1000,
-    "description": "to be added",
-    "photoPath": "subject to change"
+    "description": "the perfect balance of espresso, steamed milk and foam.",
+    "photoID": 2130968598
   },
   {
     "id": 3,
     "name": "Latte",
     "price": 1100,
-    "description": "to be added",
-    "photoPath": "subject to change"
+    "description": "a milk coffee that is a made up of one or two shots of espresso, steamed milk and a final, thin layer of frothed milk on top.",
+    "photoID": 2130968599
   },
   {
     "id": 4,
     "name": "Black Coffee",
     "price": 700,
-    "description": "to be added",
-    "photoPath": "subject to change"
+    "description": "coffeewith nothing added – no cream, no milk, no sweetener.",
+    "photoID": 2130968600
   },
   {
     "id": 5,
     "name": "Espresso",
     "price": 1200,
-    "description": "to be added",
-    "photoPath": "subject to change"
+    "description": "a concentrated form of coffee brewed with high pressure, hot water and finely ground coffee beans.",
+    "photoID": 2130968601
   },
   {
     "id": 6,
     "name": "Ristretto",
     "price": 1000,
-    "description": "to be added",
-    "photoPath": "subject to change"
+    "description": "a more highly concentrated espresso coffee. It is made with the same amount of ground coffee, but extracted with a finer grind using half as much water.",
+    "photoID": 2130968603
   },
   {
     "id": 7,
     "name": "Iced coffee",
     "price": 1100,
-    "description": "to be added",
-    "photoPath": "subject to change"
+    "description": "a beverage prepared from roasted coffee beans.",
+    "photoID": 2130968602
   }
 ]

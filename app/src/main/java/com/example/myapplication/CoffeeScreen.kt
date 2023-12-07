@@ -47,7 +47,7 @@ fun CoffeeScreen(
     CoffeScreenTopMenu(navController)
 }
 
-var selectedSize = "Medium"
+var selectedSize = "Small"
 var selectedQuantity = 0
 var currentPrice = 0
 
@@ -55,7 +55,8 @@ var currentPrice = 0
 @Composable
 fun CoffeScreenTopMenu(navController: NavController) {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
-
+    val currentCoffee = getCoffeeByID(CurrentCoffeeID)
+    currentPrice = currentCoffee.price
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
 
@@ -99,7 +100,6 @@ fun CoffeScreenTopMenu(navController: NavController) {
 @Composable
 fun CoffeeScreenScrollContent(innerPadding: PaddingValues, navController: NavController) {
     val currentCoffee = getCoffeeByID(CurrentCoffeeID)
-    if (currentPrice == 0) { currentPrice = addToPrice(currentCoffee.price, selectedSize)}
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -173,7 +173,7 @@ fun MultipleRadioButtonsSize(currentCoffee: Coffee) {
                 text = "${currentPrice}"
             )
         }
-        selectedSize = selectedValue.value.ifEmpty { "Medium" }
+        selectedSize = selectedValue.value.ifEmpty { "Small" }
         items.forEach { item ->
             Row(
                 verticalAlignment = Alignment.CenterVertically,

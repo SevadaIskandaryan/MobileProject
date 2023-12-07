@@ -100,6 +100,7 @@ fun CoffeScreenTopMenu(navController: NavController) {
 @Composable
 fun CoffeeScreenScrollContent(innerPadding: PaddingValues, navController: NavController) {
     val currentCoffee = getCoffeeByID(CurrentCoffeeID)
+    if (currentPrice == 0) { currentPrice = addToPrice(currentCoffee.price, selectedSize)}
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -124,6 +125,7 @@ fun CoffeeScreenScrollContent(innerPadding: PaddingValues, navController: NavCon
             )
         }
         MultipleRadioButtonsSize(currentCoffee)
+
         CounterButton()
         Spacer(modifier = Modifier.height(8.dp))
         Row(
@@ -215,6 +217,7 @@ fun CounterButton() {
                 // Decrement the counter on button click if count is greater than 1
                 if (count > 1) {
                     count--
+//                    currentPrice = addToPrice(currentCoffee.price, selectedSize)
                 }
             },
             modifier = Modifier
@@ -232,6 +235,7 @@ fun CounterButton() {
             onClick = {
                 // Increment the counter on button click
                 count += 1
+//                currentPrice = addToPrice(currentCoffee.price, selectedSize)
             },
             modifier = Modifier
                 .padding(8.dp)

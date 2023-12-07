@@ -136,10 +136,11 @@ fun CoffeeScreenScrollContent(innerPadding: PaddingValues, navController: NavCon
             horizontalArrangement = Arrangement.SpaceBetween
         ){
             Button(onClick = {
-                setCoffeeSizeByID(currentCoffee.id, selectedSize)
-                setCoffeeQuantityByID(currentCoffee.id, selectedQuantity)
+//                setCoffeeSizeByID(currentCoffee.id, selectedSize)
+//                setCoffeeQuantityByID(currentCoffee.id, selectedQuantity)
                 navController.navigate(route = "CoffeeList")
                 TotalPrice += addToPrice(currentCoffee.price, selectedSize)
+                setCoffeeCheck(currentCoffee.name, currentPrice, selectedQuantity, selectedSize)
                 currentPrice = 0
             },
             ) {

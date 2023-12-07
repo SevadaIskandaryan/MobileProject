@@ -124,7 +124,7 @@ fun CoffeeScreenScrollContent(innerPadding: PaddingValues, navController: NavCon
             )
         }
         MultipleRadioButtonsSize(currentCoffee)
-        CounterButton(currentCoffee)
+        CounterButton()
         Spacer(modifier = Modifier.height(8.dp))
         Row(
             modifier = Modifier
@@ -201,7 +201,7 @@ fun MultipleRadioButtonsSize(currentCoffee: Coffee) {
 
 
 @Composable
-fun CounterButton(currentCoffee: Coffee) {
+fun CounterButton() {
     var count: Int by remember { mutableStateOf(1) }
 
     Row(
@@ -215,7 +215,6 @@ fun CounterButton(currentCoffee: Coffee) {
                 // Decrement the counter on button click if count is greater than 1
                 if (count > 1) {
                     count--
-//                    currentPrice = addToPrice(currentCoffee.price, selectedSize)
                 }
             },
             modifier = Modifier
@@ -233,7 +232,6 @@ fun CounterButton(currentCoffee: Coffee) {
             onClick = {
                 // Increment the counter on button click
                 count += 1
-//                currentPrice = addToPrice(currentCoffee.price, selectedSize)
             },
             modifier = Modifier
                 .padding(8.dp)

@@ -35,6 +35,7 @@ class MainActivity : ComponentActivity() {
 var TotalPrice = 0
 var CurrentCoffeeID = 0
 var coffeeList = mutableListOf<Coffee>()
+val coffeCheckList = mutableListOf<CoffeeCheck>()
 
 @Composable
 fun getCoffeeList() : List<Coffee>{
@@ -52,12 +53,9 @@ fun getCoffeeByID(ID: Int): Coffee {
     return coffee
 }
 
-fun setCoffeeSizeByID(ID: Int, size: String) {
-    coffeeList?.find { it.id == ID }?.size = size
-}
 
-fun setCoffeeQuantityByID(ID: Int, quantity: Int) {
-    coffeeList?.find { it.id == ID }?.quantity = quantity
+fun setCoffeeCheck(name: String, priceUnit: Int, quantity: Int, size: String ) {
+    coffeCheckList.add(CoffeeCheck(name, priceUnit, priceUnit*quantity, quantity, size))
 }
 
 @Composable
@@ -74,6 +72,11 @@ fun CustomNavigationView() {
             route = "CoffeeScreen",
         ) {
             CoffeeScreen(navController)
+        }
+        composable(
+            route = "Check",
+        ) {
+            Check(navController)
         }
     }
 }

@@ -7,3 +7,9 @@ class CoffeeCheck (
     val quantity: Int = 0,
     val size: String = ""
 )
+
+val coffeCheckList = mutableListOf<CoffeeCheck>()
+
+fun setCoffeeCheck(name: String, priceUnit: Int, quantity: Int, size: String ) {
+    coffeCheckList.add(CoffeeCheck(name, priceUnit, priceUnit*quantity, quantity, size))
+}

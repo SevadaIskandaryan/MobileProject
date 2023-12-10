@@ -44,11 +44,13 @@ import androidx.navigation.NavController
 fun CoffeeScreen(
     navController: NavController
 ){
+    currentPrice = 0
+    selectedQuantity = 1
     CoffeScreenTopMenu(navController)
 }
 
 var selectedSize = "Small"
-var selectedQuantity = 0
+var selectedQuantity = 1
 var currentPrice = 0
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -139,7 +141,7 @@ fun CoffeeScreenScrollContent(innerPadding: PaddingValues, navController: NavCon
 //                setCoffeeSizeByID(currentCoffee.id, selectedSize)
 //                setCoffeeQuantityByID(currentCoffee.id, selectedQuantity)
                 navController.navigate(route = "CoffeeList")
-                TotalPrice += addToPrice(currentCoffee.price, selectedSize)
+                TotalPrice += addToPrice(currentCoffee.price, selectedSize) * selectedQuantity
                 setCoffeeCheck(currentCoffee.name, currentPrice, selectedQuantity, selectedSize)
                 currentPrice = 0
             },
@@ -152,11 +154,11 @@ fun CoffeeScreenScrollContent(innerPadding: PaddingValues, navController: NavCon
 }
 fun addToPrice(price: Int,size: String): Int{
     if (size == "Small"){
-        return price * selectedQuantity
+        return price
     } else if (size == "Medium"){
-        return (price + 200) * selectedQuantity
+        return (price + 200)
     } else {
-        return (price + 400) * selectedQuantity
+        return (price + 400)
     }
 }
 @Composable
@@ -173,7 +175,7 @@ fun MultipleRadioButtonsSize(currentCoffee: Coffee) {
             )
             Spacer(Modifier.weight(1f))
             Text(
-                text = "${currentPrice}"
+                text = "${(currentPrice)}"
             )
         }
         selectedSize = selectedValue.value.ifEmpty { "Small" }

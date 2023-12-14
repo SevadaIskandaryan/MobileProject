@@ -38,6 +38,7 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.compose.ui.platform.LocalContext
 
 
 @Composable
@@ -103,6 +104,8 @@ fun CoffeScreenTopMenu(navController: NavController) {
 fun CoffeeScreenScrollContent(innerPadding: PaddingValues, navController: NavController) {
     val currentCoffee = getCoffeeByID(CurrentCoffeeID)
     if (currentPrice == 0) { currentPrice = addToPrice(currentCoffee.price, selectedSize)}
+    val resources = LocalContext.current.resources
+    val resourceId = resources.getIdentifier(currentCoffee.photoName, "drawable", LocalContext.current.packageName)
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -110,7 +113,7 @@ fun CoffeeScreenScrollContent(innerPadding: PaddingValues, navController: NavCon
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
         Image(
-            painter = painterResource(currentCoffee.photoID),
+            painter = painterResource(resourceId),
             contentDescription=null,
             modifier = Modifier.size(250.dp),
         )

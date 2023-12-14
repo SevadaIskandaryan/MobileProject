@@ -5,7 +5,7 @@ data class Coffee (
     val name: String = "",
     val price: Int = 0,
     val description: String = "",
-    val photoID: Int = 0
+    val photoName: String = ""
 )
 
 

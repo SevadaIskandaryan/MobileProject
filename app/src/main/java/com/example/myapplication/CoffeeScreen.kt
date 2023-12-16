@@ -10,7 +10,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Menu
@@ -60,6 +62,7 @@ fun CoffeScreenTopMenu(navController: NavController) {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
     val currentCoffee = getCoffeeByID(CurrentCoffeeID)
     currentPrice = currentCoffee.price
+    selectedSize = "Small"
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
 
@@ -111,22 +114,21 @@ fun CoffeeScreenScrollContent(innerPadding: PaddingValues, navController: NavCon
             .fillMaxWidth()
             .padding(innerPadding),
         verticalArrangement = Arrangement.spacedBy(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
             painter = painterResource(resourceId),
             contentDescription=null,
-            modifier = Modifier.size(250.dp),
+            modifier = Modifier.size(200.dp),
         )
         Row(){
             Text(
-                text = currentCoffee.name + ": ",
+                text =  currentCoffee.name + ": " + currentCoffee.description,
                 style = MaterialTheme.typography.bodyLarge,
                 color = MaterialTheme.colorScheme.onBackground,
-            )
-            Text(
-                text = currentCoffee.description,
-                style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.onBackground,
+                modifier = Modifier
+                    .height(50.dp)
+                    .verticalScroll(rememberScrollState())
             )
         }
         MultipleRadioButtonsSize(currentCoffee)
